@@ -6,6 +6,7 @@ const option = {
 
 var speed = {val: 0};
 
+// get speed (m/s)
 function* getSpeed(){
     let id = navigator.geolocation.watchPosition(
         (pos) => {
@@ -20,3 +21,23 @@ function* getSpeed(){
     }
 }
 
+// Length of 1 step (m)
+const stepLength = 0.070;
+
+// get current bpm (beats per minute)
+// if error, it returns -1
+function getCurrentBpm(){
+    // speed(m/s)
+    let currentSpeed = getSpeed().next().value;
+    if (currentSpeed < 0){
+        return -1;
+    }
+    // steps (/s)
+    let numStepsSec = currentSpeed / stepLength;
+    // steps (/min) as BPM
+    let numStepMin = numStepsSec * 60;
+    // round to integer; as BPM
+    let bpm = Math.round(numStepMin);
+
+    return bpm;
+}

@@ -14,17 +14,17 @@ Hello, world!
 <script>
     // For speed test
 
-    // async function speedGetter(){
-    //     await new Promise(resolve => setTimeout(resolve, 500));
-    //     return getSpeed();
-    // }
-    // function showSpeed(){
-    //
-    //     speedGetter().then((speed) => {
-    //         document.getElementById("testspeed").innerHTML += speed.next().value + "\n";
-    //         showSpeed();
-    //     })
-    //         .catch(() => {showSpeed();})
-    // }
-    // showSpeed();
+    async function speedGetter(){
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return {spd: getSpeed().next().value, bpm: getCurrentBpm()};
+    }
+    function showSpeed(){
+
+        speedGetter().then((props) => {
+            document.getElementById("testspeed").innerHTML += "spd:" + props.spd + " bpm:" + props.bpm + "<br>"
+            showSpeed();
+        })
+            .catch(() => {showSpeed();})
+    }
+    showSpeed();
 </script>
