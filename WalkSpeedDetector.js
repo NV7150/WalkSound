@@ -13,15 +13,20 @@ const option = {
 //
 // function
 
+var speed = {val: 0};
+
 function* getSpeed(){
-    let speed = 0;
     let id = navigator.geolocation.watchPosition(
-        (pos) => {speed = pos.coords.speed;},
-        () => {console.log("some error happened"); speed = -1;},
+        (pos) => {
+            // speed = pos.coords.speed;
+            speed.val += 1;
+            },
+        () => {console.log("some error happened"); speed.val = -1; },
         option
     );
     while(true){
-        yield speed;
+        console.log(speed);
+        yield speed.val;
     }
 }
 

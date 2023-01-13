@@ -19,7 +19,6 @@ Hello, world!
     function showSpeed(){
 
         speedGetter().then((speed) => {
-            console.log(speed);
             document.getElementById("testspeed").innerHTML += speed.next().value + "\n";
             showSpeed();
         })
