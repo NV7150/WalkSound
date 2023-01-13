@@ -12,17 +12,19 @@ Hello, world!
 </html>
 
 <script>
-    async function speedGetter(){
-        await new Promise(resolve => setTimeout(resolve, 500));
-        return getSpeed();
-    }
-    function showSpeed(){
+    // For speed test
 
-        speedGetter().then((speed) => {
-            document.getElementById("testspeed").innerHTML += speed.next().value + "\n";
-            showSpeed();
-        })
-            .catch(() => {showSpeed();})
-    }
-    showSpeed();
+    // async function speedGetter(){
+    //     await new Promise(resolve => setTimeout(resolve, 500));
+    //     return getSpeed();
+    // }
+    // function showSpeed(){
+    //
+    //     speedGetter().then((speed) => {
+    //         document.getElementById("testspeed").innerHTML += speed.next().value + "\n";
+    //         showSpeed();
+    //     })
+    //         .catch(() => {showSpeed();})
+    // }
+    // showSpeed();
 </script>
