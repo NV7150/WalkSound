@@ -20,7 +20,7 @@ Hello, world!
 
         speedGetter().then((speed) => {
             console.log(speed);
-            document.getElementById("testspeed").innerHTML = speed.next().value + "";
+            document.getElementById("testspeed").innerHTML += speed.next().value + "\n";
             showSpeed();
         })
             .catch(() => {showSpeed();})

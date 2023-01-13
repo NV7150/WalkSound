@@ -17,7 +17,7 @@ function* getSpeed(){
     let speed = 0;
     let id = navigator.geolocation.watchPosition(
         (pos) => {speed = pos.coords.speed;},
-        () => {console.log("some error happened");},
+        () => {console.log("some error happened"); speed = -1;},
         option
     );
     while(true){
