@@ -18,8 +18,8 @@ var speed = {val: 0};
 function* getSpeed(){
     let id = navigator.geolocation.watchPosition(
         (pos) => {
-            // speed = pos.coords.speed;
-            speed.val += 1;
+            speed.val = pos.coords.speed;
+            // speed.val += 1;
             },
         () => {console.log("some error happened"); speed.val = -1; },
         option
