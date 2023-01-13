@@ -12,10 +12,15 @@ Hello, world!
 </html>
 
 <script>
+    async function speedGetter(){
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return getSpeed();
+    }
     function showSpeed(){
-        getSpeed().then((speed) => {
+
+        speedGetter().then((speed) => {
             console.log(speed);
-            document.getElementById("testspeed").innerHTML = speed + "";
+            document.getElementById("testspeed").innerHTML = speed.next().value + "";
             showSpeed();
         })
             .catch(() => {showSpeed();})
