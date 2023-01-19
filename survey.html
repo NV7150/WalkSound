@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="WalkMusic.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
+
+    <body id="back">
+        <header>
+            <p class="title">
+                <a class="title" href="WalkMusic.html">Walk Music</a>
+            </p>
+        </header>
+
+        <div class="survey">
+            <label class="form-label" for="range_1">How active are you now?</label>
+            <input class="form-range" type="range" id="range_1" min="0" max="5" step="1">
+        </div>
+
+        <div class="survey">
+            <label class="form-label" for="range_2">How positive are you now?</label>
+            <input class="form-range" type="range" id="range_2" min="0" max="5" step="1">
+        </div>
+
+        <div class="button" onclick="enter();">
+            <a href="play.html">Enter</a>
+        </div>
+
+        <script>
+            var randomimage = [];
+            randomimage[0] = '97.-Flare.jpg';
+            randomimage[1] = '98.-Torea-Bay.jpg';
+            randomimage[2] = '99.-Roman.jpg';
+            var n = Math.floor(Math.random()*randomimage.length);
+            document.getElementById('back').style.background='url("'+randomimage[n]+'") top /cover';
+        </script>
+    </body>
+</html>
