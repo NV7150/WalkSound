@@ -22,7 +22,7 @@ function* getSpeed(){
 }
 
 // Length of 1 step (m)
-const stepLength = 0.070;
+const stepLength = 0.70;
 
 // get current bpm (beats per minute)
 // if error, it returns -1
